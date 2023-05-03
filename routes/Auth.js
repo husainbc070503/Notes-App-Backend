@@ -6,16 +6,15 @@ const genToken = require('../utils/genToken');
 const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
+const user = "husainchampawala@gmail.com";
+const pass = "nsdrehmnckrlwxwe"
 
 const mailer = (email, otp) => {
     const transporter = nodemailer.createTransport({
         service: "gmail.com",
         port: 587,
         secure: false,
-        auth: {
-            user: process.env.USER,
-            pass: process.env.PASSWORD
-        },
+        auth: { user, pass },
         tls: {
             rejectUnauthorized: false
         }
